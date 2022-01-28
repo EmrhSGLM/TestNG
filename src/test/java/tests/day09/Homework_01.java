@@ -57,10 +57,12 @@ public class Homework_01 {
         softAssert.assertTrue(actualResultWriting.contains(expectedWriting), "Does not contain");
 
         //6.Sonuc yazisinin “oto” kelimesi icermedigini dogrulayin
+        System.out.println("actualResultWriting = " + actualResultWriting);
         String expectedOto = "Oto";
-        softAssert.assertFalse(actualResultWriting.contains("expectedOto"), "Contain");
+        softAssert.assertFalse(actualResultWriting.contains(expectedOto), "Contain");
 
         softAssert.assertAll();
+        System.out.println("Hata yok");
     }
     @AfterMethod
     public void teardown() {

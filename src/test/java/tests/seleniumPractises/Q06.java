@@ -3,6 +3,7 @@ package tests.seleniumPractises;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WindowType;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -10,15 +11,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
+import java.util.Set;
 
 public class Q06 {
-    //● https://the-internet.herokuapp.com/windows adresine gidin.
-    //● Sayfadaki textin “Opening a new window” olduğunu doğrulayın.
-    //● Sayfa başlığının(title) “The Internet” olduğunu doğrulayın.
-    //● Click Here butonuna basın.
-    //● Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
-    //● Sayfadaki textin “New Window” olduğunu doğrulayın.
-    //● Bir önceki pencereye geri döndükten sonra sayfa başlığının “The Internet” olduğunu doğrulayın.
     WebDriver driver;
     @BeforeClass
     public void setup(){
@@ -47,9 +42,15 @@ public class Q06 {
         Thread.sleep(2000);
 
         //● Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
+        String firstWin = driver.getWindowHandle();
+        Set<String> window = driver.getWindowHandles();
+        for(String w:window){
+            driver.switchTo().window(w);
+        }
         String actualTitle2 = driver.getTitle();
         String expectedTitle2 = "New Window";
         Assert.assertEquals(actualTitle2, expectedTitle2);
+
 
         //● Sayfadaki textin “New Window” olduğunu doğrulayın.
         String actualText1 = driver.findElement(By.xpath("//h3[text()='New Window']")).getText();
@@ -57,7 +58,7 @@ public class Q06 {
         Assert.assertEquals(actualText1, expectedText1);
 
         //● Bir önceki pencereye geri döndükten sonra sayfa başlığının “The Internet” olduğunu doğrulayın.
-        driver.navigate().back();
+        driver.switchTo().window(firstWin);
         String actualTitle3 = driver.getTitle();
         String expectedTitle3 = "The Internet";
         Assert.assertEquals(expectedTitle3, actualTitle3);

@@ -14,6 +14,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.awt.*;
 import java.time.Duration;
+import java.util.Set;
 
 public class C03_IFrame {
 
@@ -60,18 +61,20 @@ public class C03_IFrame {
         // ana sayfa ya donmeliyiz
         driver.switchTo().defaultContent();
         driver.findElement(By.xpath("//a[text()='Elemental Selenium']")).click();
-
+        String firstWin = driver.getWindowHandle();
+        Set<String> windowAllWindows = driver.getWindowHandles();
+        for(String w:windowAllWindows){
+            driver.switchTo().window(w);
+        }
         // yeni sayfada "Sponsored by Sauce Labs" gorunur oldugunu test edin
-
         //sponsored yazisi yeni sayfada oldugundan driver eski sayfada kaldigindan yaziyi locate edemedik
-        
+
         WebElement sponsoredYazisiElementi = driver.findElement(By.xpath("//p[@class='subheader']"));
         softAssert.assertTrue(sponsoredYazisiElementi.isDisplayed(),"Sponsored yazisi gorunmuyor");
-
         softAssert.assertAll();
     }
     @AfterClass
     public void teardown(){
-        driver.quit();
+        //driver.quit();
     }
 }
