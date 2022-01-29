@@ -49,7 +49,7 @@ public class C06_FacebookKayit extends TestBase {
                 sendKeys("2022").
                 sendKeys(Keys.TAB).
                 sendKeys(Keys.TAB).
-                sendKeys(Keys.ARROW_DOWN).
+                sendKeys(Keys.ARROW_RIGHT) .
                 sendKeys(Keys.TAB).
                 sendKeys(Keys.TAB).
                 sendKeys(Keys.TAB).
