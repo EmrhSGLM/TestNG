@@ -25,7 +25,7 @@ public class C01_KeyboardActions extends TestBase {
         Actions actions = new Actions(driver);
         actions.sendKeys(Keys.PAGE_DOWN).
                 sendKeys(Keys.PAGE_DOWN).
-                sendKeys(Keys.ARROW_DOWN).
+                sendKeys(Keys.ARROW_UP).
                 perform();
 
         //4- videoyu izlemek icin Play tusuna basin
@@ -34,7 +34,7 @@ public class C01_KeyboardActions extends TestBase {
         driver.findElement(By.xpath("//button[@class='ytp-large-play-button ytp-button']")).click();
 
         //5- videoyu calistirdiginizi test edin
-        WebElement pauseButton=driver.findElement(By.xpath("//button[@title='Pause (k)']"));
+        WebElement pauseButton=driver.findElement(By.xpath("//button[@title='Duraklat (k)']"));
         Assert.assertTrue(pauseButton.isEnabled());
 
 
