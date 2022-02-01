@@ -1,4 +1,4 @@
-package tests.day12;
+package tests.homeworks;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -17,7 +17,7 @@ import java.util.List;
 
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
-public class Homework extends TestBase {
+public class Homework_03 extends TestBase {
     //                      Test 01
     // 1-) amazon'a gidin
     // 2-) Arama kutusunun solundaki dropdown menuyu handle edip listesini ekrana yazdirin

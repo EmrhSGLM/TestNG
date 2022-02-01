@@ -1,4 +1,4 @@
-package tests.day09;
+package tests.homeworks;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
@@ -13,7 +13,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.time.Duration;
 
-public class Homework_01 {
+public class Homework_02 {
 
     //Yeni bir Class Olusturun : D11_SoftAssert1
     //1.“https:// hepsiburada .com/” Adresine gidin
