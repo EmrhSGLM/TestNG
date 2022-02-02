@@ -44,9 +44,13 @@ public class Q06 {
         //● Acilan yeni pencerenin sayfa başlığının (title) “New Window” oldugunu dogrulayin.
         String firstWin = driver.getWindowHandle();
         Set<String> window = driver.getWindowHandles();
+        String secondWin ="";
         for(String w:window){
-            driver.switchTo().window(w);
+            if(!w.equals(firstWin)){
+                secondWin =w;
+            }
         }
+        driver.switchTo().window(secondWin);
         String actualTitle2 = driver.getTitle();
         String expectedTitle2 = "New Window";
         Assert.assertEquals(actualTitle2, expectedTitle2);

@@ -6,7 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import java.time.Duration;
 
-public class Q07_mrvhnm {
+public class Q08 {
     WebDriver driver;
     @BeforeClass
     public void setup(){

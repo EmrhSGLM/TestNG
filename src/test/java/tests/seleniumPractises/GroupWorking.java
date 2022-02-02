@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class QQQ {
+public class GroupWorking {
     WebDriver driver;
     @BeforeClass
     public void setup() {
