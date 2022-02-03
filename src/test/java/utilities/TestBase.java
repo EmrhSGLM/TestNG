@@ -27,7 +27,7 @@ public abstract class TestBase {
     }
     @AfterClass
     public void teardown(){
-       //driver.quit();
+       driver.quit();
     }
 
     public void tumSayfaScreenshot(String str) throws IOException {
